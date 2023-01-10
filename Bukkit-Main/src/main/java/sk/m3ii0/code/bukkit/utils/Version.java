@@ -1,4 +1,4 @@
-package sk.m3ii0.code.bukkit.api;
+package sk.m3ii0.code.bukkit.utils;
 
 import org.bukkit.Bukkit;
 

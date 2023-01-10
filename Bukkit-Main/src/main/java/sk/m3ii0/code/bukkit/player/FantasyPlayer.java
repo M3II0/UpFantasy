@@ -1,38 +1,32 @@
 package sk.m3ii0.code.bukkit.player;
 
 import org.bukkit.entity.Player;
-import sk.m3ii0.code.bukkit.clans.Clan;
+import sk.m3ii0.code.bukkit.player.io.CachedData;
 
 public class FantasyPlayer {
 
     // Player implementation
     private final Player player;
 
-    // Player's clan
-    private Clan clan;
-
     // Player's dynamic values
+    private boolean loaded;
     private boolean crouch;
 
     // Constructor
-    public FantasyPlayer(Player player) {
+    public FantasyPlayer(Player player, CachedData data) {
 
         // Set player instance
         this.player = player;
 
         // Set player's dynamic values
         this.crouch = false;
+        this.loaded = false;
 
     }
 
     // Get player
     public Player getPlayer() {
         return player;
-    }
-
-    // Get clan
-    public Clan getClan() {
-        return clan;
     }
 
     // Is player couching?
@@ -43,6 +37,16 @@ public class FantasyPlayer {
     // Set player's crouching
     public void setCrouching(boolean value) {
         this.crouch = value;
+    }
+
+    // Get if player is loaded
+    public boolean isLoaded() {
+        return loaded;
+    }
+
+    // Set player's loaded value
+    public void setLoaded(boolean loaded) {
+        this.loaded = loaded;
     }
 
 }

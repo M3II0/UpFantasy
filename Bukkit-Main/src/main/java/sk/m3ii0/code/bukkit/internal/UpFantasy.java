@@ -5,12 +5,22 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
-import sk.m3ii0.code.bukkit.api.Version;
+import sk.m3ii0.code.bukkit.player.FantasyPlayer;
+import sk.m3ii0.code.bukkit.utils.Version;
 import sk.m3ii0.code.bukkit.listeners.ListenerManager;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class UpFantasy implements Listener {
+
+    // Class instance
+    private static UpFantasy instance;
+
+    // Hashmap for Player-FantasyPlayer
+    private final Map<UUID, FantasyPlayer> players = new HashMap<>();
 
     // Plugin instance
     private final Plugin plugin;
@@ -21,10 +31,19 @@ public class UpFantasy implements Listener {
     // Server info
     private Version version;
 
+    // Get instance from static access
+    public static UpFantasy get() {
+        return instance;
+    }
+
     // Constructor
     public UpFantasy(Plugin plugin) {
 
+        // Register plugin
         this.plugin = plugin;
+
+        // At finish, register instance
+        instance = this;
 
     }
 
@@ -89,6 +108,21 @@ public class UpFantasy implements Listener {
     // Close logic
     public void close() {
 
+    }
+
+    // Add player to cache
+    public void addFantasyPlayer(UUID uuid, FantasyPlayer fantasyPlayer) {
+        players.put(uuid, fantasyPlayer);
+    }
+
+    // Remove player from cache
+    public void removeFantasyPlayer(UUID uuid) {
+        players.remove(uuid);
+    }
+
+    // Get FantasyPlayer
+    public FantasyPlayer getFantasyPlayer(UUID uuid) {
+        return players.get(uuid);
     }
 
 }
