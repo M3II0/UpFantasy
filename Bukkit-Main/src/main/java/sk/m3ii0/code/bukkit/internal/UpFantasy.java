@@ -3,12 +3,14 @@ package sk.m3ii0.code.bukkit.internal;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import sk.m3ii0.code.bukkit.api.Version;
+import sk.m3ii0.code.bukkit.listeners.ListenerManager;
 
 import java.io.File;
 
-public class UpFantasy {
+public class UpFantasy implements Listener {
 
     // Plugin instance
     private final Plugin plugin;
@@ -55,9 +57,9 @@ public class UpFantasy {
                     "\n" +
                     "§fLoading §3UpFantasy §fby M3II0\n" +
                     "\n" +
-                    "§7Version: §3" + ((version != null)? version.getRaw() : null) + "\n" +
-                    "§7Nms: §3" + ((version != null)? version.getPacketVersion() : null) + "\n" +
-                    "§7Bukkit: §3" + ((version != null)? version.getBukkitVersion() : null) + "\n" +
+                    "§7Version: §3" + ((version != null)? version.getRaw() : "null") + "\n" +
+                    "§7Nms: §3" + ((version != null)? version.getPacketVersion() : "null") + "\n" +
+                    "§7Bukkit: §3" + ((version != null)? version.getBukkitVersion() : "null") + "\n" +
                     "§7Supported: §3" + supportedVersion + "\n" +
                     "\n");
 
@@ -66,8 +68,21 @@ public class UpFantasy {
         return this;
     }
 
-    // Eanble logic
+    // Is supported version?
+    public boolean isSupported() {
+        return version != null && version.getRaw() > 18;
+    }
+
+    // Enable logic
     public void enable() {
+
+        // Is version supported to enable?
+        if (isSupported()) {
+
+            // Load Listener Manager
+            Bukkit.getPluginManager().registerEvents(new ListenerManager(), plugin);
+
+        }
 
     }
 
