@@ -28,6 +28,9 @@ public class UpFantasy implements Listener {
     // Configuration files
     private FileConfiguration config;
 
+    // Player - Data folder
+    private File dataFolder;
+
     // Server info
     private Version version;
 
@@ -55,6 +58,14 @@ public class UpFantasy implements Listener {
 
         // Load configuration files
         File config = new File(plugin.getDataFolder(), "config.yml");
+
+        // Load data folder
+        dataFolder = new File(plugin.getDataFolder(), "playerData");
+
+        // Create data folder if not exists
+        if (!dataFolder.exists()) {
+            dataFolder.mkdirs();
+        }
 
         // Create FileConfiguration instance
         this.config = YamlConfiguration.loadConfiguration(config);
@@ -123,6 +134,11 @@ public class UpFantasy implements Listener {
     // Get FantasyPlayer
     public FantasyPlayer getFantasyPlayer(UUID uuid) {
         return players.get(uuid);
+    }
+
+    // Get data folder
+    public File getDataFolder() {
+        return dataFolder;
     }
 
 }
