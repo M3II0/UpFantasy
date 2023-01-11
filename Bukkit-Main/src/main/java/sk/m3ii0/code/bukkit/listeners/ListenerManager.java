@@ -36,6 +36,9 @@ public class ListenerManager implements Listener {
         // Put FantasyPlayer into hashMap
         UpFantasy.get().addFantasyPlayer(uuid, fantasyPlayer);
 
+        // Add player's join
+        fantasyPlayer.addLogin();
+
         // Set player as loaded
         fantasyPlayer.setLoaded(true);
 
@@ -52,6 +55,9 @@ public class ListenerManager implements Listener {
 
         // Unset FantasyPlayer as loaded
         fantasyPlayer.setLoaded(false);
+
+        // Write cached values
+        CachedData.write(fantasyPlayer);
 
         // Remove FantasyPlayer from map
         UpFantasy.get().removeFantasyPlayer(uuid);
