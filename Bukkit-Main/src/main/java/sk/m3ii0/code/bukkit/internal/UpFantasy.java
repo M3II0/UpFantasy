@@ -5,9 +5,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
+import sk.m3ii0.code.bukkit.listeners.ListenerManager;
 import sk.m3ii0.code.bukkit.player.FantasyPlayer;
 import sk.m3ii0.code.bukkit.utils.Version;
-import sk.m3ii0.code.bukkit.listeners.ListenerManager;
 
 import java.io.File;
 import java.util.HashMap;
