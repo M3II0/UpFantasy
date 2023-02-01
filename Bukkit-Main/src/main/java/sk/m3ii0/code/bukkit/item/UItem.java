@@ -1,22 +1,17 @@
 package sk.m3ii0.code.bukkit.item;
 
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
-import org.bukkit.profile.PlayerProfile;
-import org.bukkit.profile.PlayerTextures;
-import org.checkerframework.checker.guieffect.qual.UI;
 import sk.m3ii0.code.bukkit.colors.Hex;
 
 import java.lang.reflect.Field;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
 
 public class UItem {
 
@@ -24,7 +19,7 @@ public class UItem {
     private ItemStack item;
 
     // Meta
-    private final ItemMeta meta;
+    private ItemMeta meta;
 
     // Constructor
     public UItem(Material material) {
@@ -38,116 +33,33 @@ public class UItem {
     }
 
     // Custom skull
-    private UItem customSkull(String texture) {
+    public UItem customSkull(String texture) {
 
-        // Set item to skull
-        item = new ItemStack(Material.PLAYER_HEAD);
+        // Return if url is empty
+        if (texture.isEmpty()) {
+            return this;
+        }
 
-        // Get skull meta
-        SkullMeta headMeta = (SkullMeta) item.getItemMeta();
+        // Create skull meta
+        SkullMeta headMeta = (SkullMeta) this.item.getItemMeta();
 
-        // Get Game Profile
-        PlayerProfile profile = new PlayerProfile() {
-            @Override
-            public Map<String, Object> serialize() {
-                return null;
-            }
-
-            @Override
-            public UUID getUniqueId() {
-                return UUID.randomUUID();
-            }
-
-            @Override
-            public String getName() {
-                return "CustomHead";
-            }
-
-            @Override
-            public PlayerTextures getTextures() {
-                return new PlayerTextures() {
-                    @Override
-                    public boolean isEmpty() {
-                        return false;
-                    }
-
-                    @Override
-                    public void clear() {
-
-                    }
-
-                    @Override
-                    public URL getSkin() {
-                        try {
-                            return new URL(texture);
-                        } catch (MalformedURLException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-
-                    @Override
-                    public void setSkin(URL url) {
-
-                    }
-
-                    @Override
-                    public void setSkin(URL url, SkinModel skinModel) {
-
-                    }
-
-                    @Override
-                    public SkinModel getSkinModel() {
-                        return null;
-                    }
-
-                    @Override
-                    public URL getCape() {
-                        return null;
-                    }
-
-                    @Override
-                    public void setCape(URL url) {
-
-                    }
-
-                    @Override
-                    public long getTimestamp() {
-                        return 0;
-                    }
-
-                    @Override
-                    public boolean isSigned() {
-                        return false;
-                    }
-                };
-            }
-
-            @Override
-            public void setTextures(PlayerTextures playerTextures) {
-
-            }
-
-            @Override
-            public boolean isComplete() {
-                return false;
-            }
-
-            @Override
-            public CompletableFuture<PlayerProfile> update() {
-                return null;
-            }
-
-            @Override
-            public PlayerProfile clone() {
-                return null;
-            }
-        };
+        // Create game profile
+        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
 
         // Set texture
-        headMeta.setOwnerProfile(profile);
+        profile.getProperties().put("textures", new Property("textures", texture));
+
+        // Set field
+        Field profileField;
+        try {
+            profileField = headMeta.getClass().getDeclaredField("profile");
+            profileField.setAccessible(true);
+            profileField.set(headMeta, profile);
+        } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException ignored) {}
 
         // Set item meta
-        item.setItemMeta(headMeta);
+        this.item.setItemMeta(headMeta);
+        this.meta = headMeta;
 
         return this;
     }

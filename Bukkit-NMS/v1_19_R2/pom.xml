@@ -26,6 +26,11 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
 
+        <repository>
+            <id>nms</id>
+            <url>https://repo.bg-software.com/repository/nms/</url>
+        </repository>
+
     </repositories>
 
     <dependencies>

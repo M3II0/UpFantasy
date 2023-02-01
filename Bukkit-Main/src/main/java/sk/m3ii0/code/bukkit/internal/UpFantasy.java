@@ -7,11 +7,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import sk.m3ii0.code.bukkit.listeners.ListenerManager;
 import sk.m3ii0.code.bukkit.player.FantasyPlayer;
+import sk.m3ii0.code.bukkit.spi.PacketManager;
+import sk.m3ii0.code.bukkit.utils.ColorPicker;
 import sk.m3ii0.code.bukkit.utils.Version;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ServiceLoader;
 import java.util.UUID;
 
 public class UpFantasy implements Listener {
@@ -33,6 +36,9 @@ public class UpFantasy implements Listener {
 
     // Server info
     private Version version;
+
+    // Packet version
+    private PacketManager packetManager;
 
     // Get instance from static access
     public static UpFantasy get() {
@@ -112,6 +118,18 @@ public class UpFantasy implements Listener {
             // Load Listener Manager
             Bukkit.getPluginManager().registerEvents(new ListenerManager(), plugin);
 
+            // Load packet manager if is supported
+            ServiceLoader.load(PacketManager.class).forEach(
+                    (manager) -> {
+
+                        // Set packet manager if is supported
+                        if (manager.isSupported(version)) {
+                            packetManager = manager;
+                        }
+
+                    }
+            );
+
         }
 
     }
@@ -144,6 +162,11 @@ public class UpFantasy implements Listener {
     // Get plugin instance
     public Plugin getPlugin() {
         return plugin;
+    }
+
+    // Get packet manager
+    public PacketManager getPacketManager() {
+        return packetManager;
     }
 
 }

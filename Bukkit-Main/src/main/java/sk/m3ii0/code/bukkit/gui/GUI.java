@@ -10,7 +10,7 @@ import sk.m3ii0.code.bukkit.listeners.menu.MenuListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GUI {
+public class  GUI {
 
     // Menu title
     private final String title;
