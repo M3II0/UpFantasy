@@ -458,15 +458,57 @@ public class Utils {
     public static class ItemBuilder {
 
         public static ItemStack newWarrior(String player) {
-            return Heads.WARRIOR_ICON_F.getAsUItem()
-                    .setName(ColorPattern.Warrior.F1.wrapText("Warrior") + " &f" + player)
+            return Heads.WARRIOR_ICON_A.getAsUItem()
+                    .setName(ColorPattern.Warrior.A1.wrapText("Warrior") + " &f" + player)
                     .setLore(
                             "",
-                            " &7≢ Group symbol: " + ColorPattern.Warrior.F2.wrapText(Symbols.NEPTUNE.getSymbol() + " "),
+                            " &7≢ Group symbol: " + ColorPattern.Warrior.A2.wrapText(Symbols.NEPTUNE.getSymbol() + " "),
                             " &7≢ Advantages in: &aCombat&7, &adexterity&7, &amind &7& &astrength",
                             " &7≢ Defects: &cStamina&7, &clogic&7, &calchemy &7& &cadaptability",
                             "",
                             " &7≢ Adapted for: &fMale",
+                            ""
+                    ).toItem();
+        }
+
+        public static ItemStack newMagician(String player) {
+            return Heads.MAGICIAN_ICON_A.getAsUItem()
+                    .setName(ColorPattern.Magician.A1.wrapText("Magician") + " &f" + player)
+                    .setLore(
+                            "",
+                            " &7≢ Group symbol: " + ColorPattern.Magician.A2.wrapText(Symbols.ANKH.getSymbol() + " "),
+                            " &7≢ Advantages in: &aAlchemy&7, &ateleportation&7, &amovement &7& &abackdoors",
+                            " &7≢ Defects: &cCombat&7, &cstrength &7& &cwater",
+                            "",
+                            " &7≢ Adapted for: &fMale",
+                            ""
+                    ).toItem();
+        }
+
+        public static ItemStack newNightshade(String player) {
+            return Heads.NIGHTSHADE_ICON_A.getAsUItem()
+                    .setName(ColorPattern.Nightshade.A1.wrapText("Nightshade") + " &f" + player)
+                    .setLore(
+                            "",
+                            " &7≢ Group symbol: " + ColorPattern.Nightshade.A2.wrapText(Symbols.FARSI.getSymbol() + " "),
+                            " &7≢ Advantages in: &aCombat&7, &aalchemy&7, &astamina &7& &astrength",
+                            " &7≢ Defects: &cMind&7, &clogic&7, &cnether &7& &cadaptability",
+                            "",
+                            " &7≢ Adapted for: &fFemale",
+                            ""
+                    ).toItem();
+        }
+
+        public static ItemStack newAngel(String player) {
+            return Heads.ANGEL_ICON_A.getAsUItem()
+                    .setName(ColorPattern.Angel.A1.wrapText("Angel") + " &f" + player)
+                    .setLore(
+                            "",
+                            " &7≢ Group symbol: " + ColorPattern.Angel.A2.wrapText(Symbols.ADI_SHAKTI.getSymbol() + " "),
+                            " &7≢ Advantages in: &aKindness&7, &alogic&7, &aalchemy &7& &astamina",
+                            " &7≢ Defects: &cNether&7, &ccombat&7, &cstrength &7& &cadaptability",
+                            "",
+                            " &7≢ Adapted for: &fFemale",
                             ""
                     ).toItem();
         }
