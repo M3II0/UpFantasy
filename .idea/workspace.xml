@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26b4ac53-4d43-42d3-afcd-8d50e0190b67" name="Changes" comment="- Fixed authlib import&#10;- Added UItem.java&#10;- Prepared PacketManager.java&#10;- Added Warrior color scheme">
+    <list default="true" id="26b4ac53-4d43-42d3-afcd-8d50e0190b67" name="Changes" comment="- Added README.md file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/gui/introduction/IntroductionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/gui/introduction/IntroductionGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/internal/UpFantasy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/internal/UpFantasy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/utils/ColorPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +64,35 @@
       <option name="project" value="LOCAL" />
       <updated>1675290426088</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Preparing Constants.java">
+      <created>1675351072066</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675351072066</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Added README.md file">
+      <created>1675351322169</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675351322169</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- Added README.md file">
+      <created>1675351352163</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675351352163</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Fixed authlib import&#10;- Added UItem.java&#10;- Prepared PacketManager.java&#10;- Added Warrior color scheme" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Fixed authlib import&#10;- Added UItem.java&#10;- Prepared PacketManager.java&#10;- Added Warrior color scheme" />
+    <MESSAGE value="- Preapring Constants.java" />
+    <MESSAGE value="- Preparing Constants.java" />
+    <MESSAGE value="- Added README.md file" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added README.md file" />
   </component>
 </project>
