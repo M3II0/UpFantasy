@@ -9,7 +9,6 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
 import sk.m3ii0.code.bukkit.internal.UpFantasy;
 import sk.m3ii0.code.bukkit.item.UItem;
-import sk.m3ii0.code.bukkit.utils.ColorPicker;
 
 import java.util.HashSet;
 import java.util.List;

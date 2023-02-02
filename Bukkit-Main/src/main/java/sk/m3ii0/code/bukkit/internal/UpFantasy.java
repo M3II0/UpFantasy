@@ -8,7 +8,6 @@ import org.bukkit.plugin.Plugin;
 import sk.m3ii0.code.bukkit.listeners.ListenerManager;
 import sk.m3ii0.code.bukkit.player.FantasyPlayer;
 import sk.m3ii0.code.bukkit.spi.PacketManager;
-import sk.m3ii0.code.bukkit.utils.ColorPicker;
 import sk.m3ii0.code.bukkit.utils.Version;
 
 import java.io.File;

@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26b4ac53-4d43-42d3-afcd-8d50e0190b67" name="Changes" comment="- Updated project">
-      <change afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/utils/ColorPicker.java" afterDir="false" />
+    <list default="true" id="26b4ac53-4d43-42d3-afcd-8d50e0190b67" name="Changes" comment="- Fixed authlib import&#10;- Added UItem.java&#10;- Prepared PacketManager.java&#10;- Added Warrior color scheme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/gui/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/gui/introduction/IntroductionGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/gui/introduction/IntroductionGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/internal/UpFantasy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/internal/UpFantasy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/item/UItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/item/UItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/spi/PacketManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/spi/PacketManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bukkit-NMS/v1_19_R2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-NMS/v1_19_R2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bukkit-NMS/v1_19_R2/src/main/java/sk/m3ii0/code/nms/v1_19_R2/PacketManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-NMS/v1_19_R2/src/main/java/sk/m3ii0/code/nms/v1_19_R2/PacketManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jar-Shade/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Jar-Shade/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/utils/ColorPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bukkit-Main/src/main/java/sk/m3ii0/code/bukkit/utils/Constants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +59,18 @@
       <option name="presentableId" value="Default" />
       <updated>1673304089566</updated>
     </task>
+    <task id="LOCAL-00001" summary="- Fixed authlib import&#10;- Added UItem.java&#10;- Prepared PacketManager.java&#10;- Added Warrior color scheme">
+      <created>1675290426088</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675290426088</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Fixed authlib import&#10;- Added UItem.java&#10;- Prepared PacketManager.java&#10;- Added Warrior color scheme" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Fixed authlib import&#10;- Added UItem.java&#10;- Prepared PacketManager.java&#10;- Added Warrior color scheme" />
   </component>
 </project>
