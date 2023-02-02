@@ -5,10 +5,14 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
+import sk.m3ii0.code.bukkit.gui.GUI;
+import sk.m3ii0.code.bukkit.gui.GUIItem;
 import sk.m3ii0.code.bukkit.internal.UpFantasy;
 import sk.m3ii0.code.bukkit.item.UItem;
+import sk.m3ii0.code.bukkit.utils.Utils;
 
 import java.util.HashSet;
 import java.util.List;
@@ -54,15 +58,23 @@ public class IntroductionGUI implements Listener {
                 "---------"
         );
 
-        // Create first group
-        ItemStack warrior = new UItem(Material.PLAYER_HEAD)
-                .customSkull("")
-                .setName("")
-                .setLore(
-                        "",
-                        ""
-                )
-                .toItem();
+        // Create GUI
+        GUI gui = new GUI("&0Pick your character", 54);
+
+        gui.addItem(new GUIItem() {
+            @Override
+            public ItemStack item() {
+                return Utils.ItemBuilder.newWarrior(player.getName());
+            }
+
+            @Override
+            public void onClick(Player player, GUI gui, ClickType clickType, int slot) {
+                non_permitted.remove(player.getUniqueId());
+                gui.close(player);
+            }
+        });
+
+        gui.open(player);
 
     }
 

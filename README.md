@@ -13,7 +13,8 @@ has their own abilities, their own story, their world and their skill-tree.
 
 # Characters (Choosing who you can play for)
 
-**Warrior (Male character) ->**
+**Warrior (Male character) ->** *Advantages in: Combat, dexterity,
+mind & strength. Defects: Stamina, logic, alchemy & adaptability.*
 <br><br>
 **Magician (Male character) ->**
 <br><br>

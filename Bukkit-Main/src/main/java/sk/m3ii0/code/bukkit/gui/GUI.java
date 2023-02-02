@@ -89,12 +89,14 @@ public class  GUI {
 
     // Add item
     public void addItem(GUIItem item) {
-        items.put(items.size()+1, item);
+        items.put(items.size(), item);
+        gui.addItem(item.item());
     }
 
     // Add item to slot
     public void setItem(int slot, GUIItem item) {
         items.put(slot, item);
+        gui.setItem(slot, item.item());
     }
 
     // Open inventory
