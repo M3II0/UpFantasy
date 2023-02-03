@@ -3,13 +3,15 @@ package sk.m3ii0.code.bukkit.gui.introduction;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
-import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
 import sk.m3ii0.code.bukkit.gui.GUI;
 import sk.m3ii0.code.bukkit.gui.GUIItem;
+import sk.m3ii0.code.bukkit.gui.introduction.news.SelectionAngel;
+import sk.m3ii0.code.bukkit.gui.introduction.news.SelectionMagician;
+import sk.m3ii0.code.bukkit.gui.introduction.news.SelectionNightshade;
+import sk.m3ii0.code.bukkit.gui.introduction.news.SelectionWarrior;
 import sk.m3ii0.code.bukkit.internal.UpFantasy;
 import sk.m3ii0.code.bukkit.item.UItem;
 import sk.m3ii0.code.bukkit.utils.Utils;
@@ -17,6 +19,12 @@ import sk.m3ii0.code.bukkit.utils.Utils;
 import java.util.*;
 
 public class IntroductionGUI implements Listener {
+
+    // Static new guis
+    private static final SelectionWarrior selectionWarrior = new SelectionWarrior();
+    private static final SelectionMagician selectionMagician = new SelectionMagician();
+    private static final SelectionNightshade selectionNightshade = new SelectionNightshade();
+    private static final SelectionAngel selectionAngel = new SelectionAngel();
 
     // Constructor
     public IntroductionGUI() {
@@ -72,6 +80,20 @@ public class IntroductionGUI implements Listener {
 
             }
         });
+        items.put('w', new GUIItem() {
+            @Override
+            public ItemStack item() {
+                return new UItem(Material.GREEN_CONCRETE)
+                        .setName("&aClick to choose Warrior!")
+                        .toItem();
+            }
+
+            @Override
+            public void onClick(Player player, GUI gui, ClickType clickType, int slot) {
+                gui.close(player);
+                selectionWarrior.open(player);
+            }
+        });
 
         // Adding magician
         items.put('2', new GUIItem() {
@@ -83,6 +105,20 @@ public class IntroductionGUI implements Listener {
             @Override
             public void onClick(Player player, GUI gui, ClickType clickType, int slot) {
 
+            }
+        });
+        items.put('m', new GUIItem() {
+            @Override
+            public ItemStack item() {
+                return new UItem(Material.GREEN_CONCRETE)
+                        .setName("&aClick to choose Magician!")
+                        .toItem();
+            }
+
+            @Override
+            public void onClick(Player player, GUI gui, ClickType clickType, int slot) {
+                gui.close(player);
+                selectionMagician.open(player);
             }
         });
 
@@ -98,6 +134,20 @@ public class IntroductionGUI implements Listener {
 
             }
         });
+        items.put('n', new GUIItem() {
+            @Override
+            public ItemStack item() {
+                return new UItem(Material.GREEN_CONCRETE)
+                        .setName("&aClick to choose Nightshade!")
+                        .toItem();
+            }
+
+            @Override
+            public void onClick(Player player, GUI gui, ClickType clickType, int slot) {
+                gui.close(player);
+                selectionNightshade.open(player);
+            }
+        });
 
         // Adding angel
         items.put('4', new GUIItem() {
@@ -109,6 +159,20 @@ public class IntroductionGUI implements Listener {
             @Override
             public void onClick(Player player, GUI gui, ClickType clickType, int slot) {
 
+            }
+        });
+        items.put('a', new GUIItem() {
+            @Override
+            public ItemStack item() {
+                return new UItem(Material.GREEN_CONCRETE)
+                        .setName("&aClick to choose Angel!")
+                        .toItem();
+            }
+
+            @Override
+            public void onClick(Player player, GUI gui, ClickType clickType, int slot) {
+                gui.close(player);
+                selectionAngel.open(player);
             }
         });
 
