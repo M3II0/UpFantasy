@@ -1,12 +1,38 @@
 package sk.m3ii0.code.bukkit.utils;
 
 import org.bukkit.Material;
+import org.bukkit.command.CommandSender;
 import org.bukkit.inventory.ItemStack;
+import sk.m3ii0.code.bukkit.colors.Hex;
 import sk.m3ii0.code.bukkit.item.UItem;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Utils {
+
+    // Partial matches
+    public static java.util.List<String> copyPartialMatches(String prefix, Iterable<String> originals) {
+        java.util.List<String> collection = new ArrayList<>();
+        for (String string : originals)
+            if (string == null || string.length() < prefix.length() ? false : string.regionMatches(true, 0, prefix, 0, prefix.length()))
+                collection.add(string);
+        return collection;
+    }
+
+    // Send fantasy message
+    public static void sendSystemMessage(String message, CommandSender sender) {
+
+        // Set prefix to message
+        message = ColorPattern.setPrefix(message);
+
+        // Colorize the message
+        String finalMessage = Hex.colorizeAndHighlight(message, new Color(134, 245, 212), new Color(53, 155, 166), "§7");
+
+        // Send message
+        sender.sendMessage(finalMessage);
+
+    }
 
     // Head class
     public enum Heads {
@@ -426,6 +452,11 @@ public class Utils {
 
         }
 
+        // Set prefix
+        public static String setPrefix(String message) {
+            return "<#b8ffd4>|| UpFantasy ≢</#63d490> &7" + message;
+        }
+
     }
 
     // Symbols
@@ -478,7 +509,7 @@ public class Utils {
                             "",
                             " &7≢ Group symbol: " + ColorPattern.Magician.A2.wrapText(Symbols.ANKH.getSymbol() + " "),
                             " &7≢ Advantages in: &aAlchemy&7, &ateleportation&7, &amovement &7& &abackdoors",
-                            " &7≢ Defects: &cCombat&7, &cstrength &7& &cwater",
+                               " &7≢ Defects: &cCombat&7, &cstrength &7& &cwater",
                             "",
                             " &7≢ Adapted for: &fMale",
                             ""

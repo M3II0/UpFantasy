@@ -2,6 +2,7 @@ package sk.m3ii0.code.bukkit;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import sk.m3ii0.code.bukkit.internal.UpFantasy;
+import sk.m3ii0.code.bukkit.internal.commands.GiveHead;
 
 public class UpFantasyBooter extends JavaPlugin {
 
@@ -21,6 +22,15 @@ public class UpFantasyBooter extends JavaPlugin {
 
         // Enable plugin
         upFantasy.enable();
+
+        // Load commands if is supported
+        if (upFantasy.isSupported()) {
+
+            // Register give head commands
+            getCommand("givehead").setExecutor(new GiveHead());
+            getCommand("givehead").setTabCompleter(new GiveHead());
+
+        }
 
     }
 

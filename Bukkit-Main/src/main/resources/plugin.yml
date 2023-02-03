@@ -3,3 +3,7 @@ version: 1.0
 author: M3II0
 main: sk.m3ii0.code.bukkit.UpFantasyBooter
 api-version: 1.19
+commands:
+  givehead:
+    permission: upfantasy.admin
+    description: Giving custom heads
